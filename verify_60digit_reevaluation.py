@@ -27,7 +27,7 @@ This script performs that re-evaluation explicitly:
      each of the 7 disagreeing points.
   3. Reports, for each point, the double-precision verdict from both
      methods alongside the 60-digit verdict from both methods, and
-     confirms that all 7 resolve to exact agreement at 60 digits.
+     confirms that all 7 resolve to agreement at 60 digits.
 
 Requirements: numpy, mpmath. Run with:
 
@@ -174,4 +174,4 @@ if __name__ == "__main__":
         print(f"  idx={idx}: double-precision (derived={d64}, Schur-Cohn={s64})  "
               f"60-digit (derived={d_mp}, Schur-Cohn={s_mp})  resolved={resolved}")
 
-    print(f"\n{n_resolved}/{len(mismatch_idx)} resolved to exact agreement at 60-digit precision.")
+    print(f"\n{n_resolved}/{len(mismatch_idx)} resolved to agreement at 60-digit precision.")
