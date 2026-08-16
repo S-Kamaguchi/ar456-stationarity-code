@@ -117,7 +117,7 @@ def schur_cohn_stationary(phi):
     return True
 
 def run_schur_cohn_crosscheck(p, cond_fn, N_random, N_stationary, box, seed):
-    rng = np.random.default_rng(seed+1)
+    rng = np.random.default_rng(seed)
     P = rng.uniform(-box, box, size=(N_random, p))
     sc = np.array([schur_cohn_stationary(P[i]) for i in range(N_random)])
     gt = np.array([ground_truth_stationary(P[i]) for i in range(N_random)])
