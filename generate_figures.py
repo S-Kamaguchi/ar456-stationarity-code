@@ -7,7 +7,7 @@ Regenerates all five figures used in:
     and AR(6) via Unit-Circle Analysis."
 
   Figure 1 (fig3_AR4_cross_section.png): 2D cross-section of St(4) at
-      fixed phi2=0, phi4=0.3, in the (phi1,phi3)-plane, with the derived
+      fixed phi2=0, phi4=0.3, in the (phi1,phi3)-plane, with the
       derived boundary curve (Q=0) and auxiliary boundary lines overlaid on a
       root-finding-classified shaded region (Section 4.4).
   Figure 2 (fig4_AR4_3D_region.png): the full 3D cross-section of St(4)
