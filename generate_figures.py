@@ -129,7 +129,7 @@ def make_fig_AR4_cross_section():
     # Derived boundary: (phi1-phi3)^2 + (1+phi4)(phi1-phi3)(-phi1) + (1+phi4)^2(-1-phi2+phi4) = 0,
     # a quadratic in phi3 for each fixed phi1 (solved directly, independent of the root-finding above).
     p1_line = np.linspace(-3, 3, 800)
-    for branch, color, lbl in [(1, '#B03A2E', 'derived boundary: quartic = 0')]:
+    for branch, color, lbl in [(1, '#B03A2E', 'derived boundary: Q = 0')]:
         # Rewrite the boundary as a quadratic in phi3: let d = phi1-phi3.
         # d^2 - (1+phi4)*phi1*d + (1+phi4)^2*(-1-phi2+phi4) = 0  =>  solve for d.
         a_ = 1.0
