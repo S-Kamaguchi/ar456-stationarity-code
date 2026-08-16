@@ -28,7 +28,7 @@ Expected output: 15/15 checks PASS.
 
 ## `verify_60digit_reevaluation.py`
 
-Reproduces the 60-digit arbitrary-precision re-evaluation cited in Section 5.3's Table 1 footnote: identifies the 7 near-boundary AR(6) points (seed=7) where the derived criterion and the Schur–Cohn test disagree in double precision, then re-evaluates both using `mpmath` at 60 decimal digits and confirms all 7 resolve to agreement at 60-digit precision.
+Reproduces the 60-digit arbitrary-precision re-evaluation cited in Section 5.3's results-table footnote: identifies the 7 near-boundary AR(6) points (seed=7) where the derived criterion and the Schur–Cohn test disagree in double precision, then re-evaluates both using `mpmath` at 60 decimal digits and confirms all 7 resolve to agreement at 60-digit precision.
 
 ```
 python3 verify_60digit_reevaluation.py
