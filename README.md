@@ -14,11 +14,11 @@ Reproduces the numerical verification of Section 5: for each of AR(4), AR(5), an
 python3 numerical_verification_ar456.py
 ```
 
-Note on the near-boundary stress test (Section 5.3): direct root computation (`numpy.roots`) loses the precision needed to resolve `|x|<1` once a root sits within roughly 1e-9 of the unit circle, which occurs for a small fraction of the near-boundary sample by construction. This shows up as apparent "mismatches" against root-finding in that section only; the derived criterion and the Schur–Cohn test, which do not rely on root-finding, do not exhibit this and agree with each other exactly (see the paper's Section 5.3 for the full discussion, including a small number of AR(6) double-precision edge cases that resolve to exact agreement under higher-precision arithmetic).
+Note on the near-boundary stress test (Section 5.3): direct root computation (`numpy.roots`) loses the precision needed to resolve `|x|<1` once a root sits within roughly 1e-9 of the unit circle, which occurs for a small fraction of the near-boundary sample by construction. This shows up as apparent "mismatches" against root-finding in that section only; the derived criterion and the Schur–Cohn test, which do not rely on root-finding, do not exhibit this and agree with each other (see the paper's Section 5.3 for the full discussion, including a small number of AR(6) double-precision edge cases that resolve to exact agreement under higher-precision arithmetic).
 
 ## `verify_algebra.py`
 
-Symbolically verifies, using `sympy`, every algebraic elimination step used to derive the AR(4)/AR(5)/AR(6) closed-form criteria in Section 4 (the degree-reduction steps via Chebyshev identities, the linear-elimination steps, and the BI6 compaction identity for AR(6)). Each step is checked for *exact* symbolic equality against the equation stated in the paper, not mere numerical agreement.
+Symbolically verifies, using `sympy`, the principal algebraic elimination step used to derive the AR(4)/AR(5)/AR(6) closed-form criteria in Section 4 (the degree-reduction steps via Chebyshev identities, the linear-elimination steps, and the BI6 compaction identity for AR(6)). Each step is checked for *exact* symbolic equality against the equation stated in the paper, not mere numerical agreement.
 
 ```
 python3 verify_algebra.py
@@ -28,7 +28,7 @@ Expected output: 15/15 checks PASS.
 
 ## `verify_60digit_reevaluation.py`
 
-Reproduces the 60-digit arbitrary-precision re-evaluation cited in Section 5.3's Table 1 footnote: identifies the 7 near-boundary AR(6) points (seed=7) where the derived criterion and the Schur–Cohn test disagree in double precision, then re-evaluates both using `mpmath` at 60 decimal digits and confirms all 7 resolve to exact agreement.
+Reproduces the 60-digit arbitrary-precision re-evaluation cited in Section 5.3's Table 1 footnote: identifies the 7 near-boundary AR(6) points (seed=7) where the derived criterion and the Schur–Cohn test disagree in double precision, then re-evaluates both using `mpmath` at 60 decimal digits and confirms all 7 resolve to agreement at 60-digit precision.
 
 ```
 python3 verify_60digit_reevaluation.py
