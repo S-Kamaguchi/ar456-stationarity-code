@@ -14,7 +14,7 @@ Reproduces the numerical verification of Section 5: for each of AR(4), AR(5), an
 python3 numerical_verification_ar456.py
 ```
 
-Note on the near-boundary stress test (Section 5.3): direct root computation (`numpy.roots`) disagrees with the other two methods when a sampled root lies extremely close to the unit circle, which occurs for a small fraction of the near-boundary sample by construction. This shows up as apparent "mismatches" against root-finding in that section only; the derived criterion and the Schur–Cohn test, which do not rely on root-finding, do not exhibit this and agree with each other (see the paper's Section 5.3 for the full discussion, including a small number of AR(6) double-precision edge cases that resolve to agreement under higher-precision arithmetic).
+Note on the near-boundary stress test (Section 5.3): in these experiments, direct root computation (`numpy.roots`) disagrees with the other two methods when a sampled root lies extremely close to the unit circle, which occurs for a small fraction of the near-boundary sample by construction. This shows up as apparent "mismatches" against root-finding in that section only; the derived criterion and the Schur–Cohn test, which do not rely on root-finding, do not exhibit this and agree with each other (see the paper's Section 5.3 for the full discussion, including a small number of AR(6) double-precision edge cases that resolve to agreement under higher-precision arithmetic).
 
 ## `verify_algebra.py`
 
