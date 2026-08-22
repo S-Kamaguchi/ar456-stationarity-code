@@ -21,10 +21,7 @@ Regenerates all five figures used in:
       (phi1,phi3,phi2)-space, using the closed-form phi2-envelope derived
       in the paper (Section 4.4).
 
-All classification of "stationary" points is via direct root computation
-of the inverse characteristic polynomial (companion-matrix eigenvalues via
-numpy.roots), independent of the paper's derived inequalities, exactly as
-described in each figure's caption.
+Figures 1 and 4 classify their scatter/shading points via direct root computation of the inverse characteristic polynomial (companion-matrix eigenvalues via numpy.roots; see is_stationary below), independent of the paper's derived inequalities. Figure 3 has no validation points at all (it draws only the known closed-form AR(2) triangle). Figures 2 and 5 (the full 3D regions) instead draw their surfaces directly from the closed-form/derived-inequality description of the region (cond_AR4 for Figure 2; the AR(3) closed form for Figure 5) and generate their red interior points independently via the reflection-coefficient (Levinson-Durbin forward) parametrization, which is guaranteed-stationary by construction; neither root-finding nor the Schur-Cohn test is used for those two figures.
 
 Requirements: numpy, matplotlib (mplot3d is part of matplotlib). Run with:
 
