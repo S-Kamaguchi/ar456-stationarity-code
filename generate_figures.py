@@ -210,7 +210,7 @@ def make_fig_AR4_3D():
     ax.plot_wireframe(P1, P2, Zmax, rstride=10, cstride=10, color='#2E5C8A', linewidth=0.3, alpha=0.5)
     ax.plot_wireframe(P1, P2, Zmin, rstride=10, cstride=10, color='#2E5C8A', linewidth=0.3, alpha=0.5)
     ax.scatter(P[:, 0], P[:, 1], P[:, 2], color='#C0392B', s=3, alpha=0.55, depthshade=False,
-               label='guaranteed-stationary samples\n(Schur-Cohn / root-finding)')
+               label='guaranteed-stationary samples\n(reflection-coefficient construction)')
     ax.set_xlabel(r'$\phi_1$')
     ax.set_ylabel(r'$\phi_2$')
     ax.set_zlabel(r'$\phi_3$')
@@ -258,7 +258,7 @@ def make_fig_AR3_3D():
     ax.plot_wireframe(P1, P3, Zhigh_m, rstride=10, cstride=10, color='#2E5C8A', linewidth=0.3, alpha=0.5)
     ax.plot_wireframe(P1, P3, Zlow_m, rstride=10, cstride=10, color='#2E5C8A', linewidth=0.3, alpha=0.5)
     ax.scatter(Pv2[:, 0], Pv2[:, 2], Pv2[:, 1], color='#C0392B', s=3, alpha=0.55, depthshade=False,
-               label='guaranteed-stationary samples\n(root-finding)')
+               label='guaranteed-stationary samples\n(reflection-coefficient construction)')
     ax.set_xlabel(r'$\phi_1$')
     ax.set_ylabel(r'$\phi_3$')
     ax.set_zlabel(r'$\phi_2$')
