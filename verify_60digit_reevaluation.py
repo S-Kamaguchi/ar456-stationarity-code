@@ -8,7 +8,7 @@ Section 5.3 ("Results") of:
     and AR(6) via Unit-Circle Analysis."
 
 Section 5.3 reports that, of the 50,000 near-boundary AR(6) points
-(seed=7, the same batch used for Table 1), 7 show a disagreement between
+(seed=7, the same batch used for results table), 7 show a disagreement between
 the derived criterion and the Schur-Cohn test when both are evaluated in
 IEEE 754 double precision, and that re-evaluating these 7 points in
 60-digit arbitrary-precision arithmetic (Python's mpmath library)
@@ -21,7 +21,7 @@ This script performs that re-evaluation explicitly:
      N=50000), and identifies the double-precision disagreements between
      cond_AR6 (the derived criterion) and schur_cohn_stationary (the
      Schur-Cohn / Levinson-Durbin step-down test) -- this reproduces the
-     "7" cited in Table 1's footnote.
+     "7" cited in results table's footnote.
   2. Re-implements both cond_AR6 and schur_cohn_stationary using mpmath
      at 60 decimal digits of precision (mp.mp.dps = 60), and re-evaluates
      each of the 7 disagreeing points.
@@ -161,7 +161,7 @@ if __name__ == "__main__":
 
     print(f"Double-precision disagreements (derived vs Schur-Cohn), "
           f"seed=7, N=50000: {len(mismatch_idx)}")
-    print(f"(Table 1 footnote reports 7 such disagreements.)\n")
+    print(f"(results table footnote reports 7 such disagreements.)\n")
 
     print("Re-evaluating each double-precision-mismatched point at 60-digit precision:")
     n_resolved = 0
